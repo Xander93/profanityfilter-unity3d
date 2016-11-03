@@ -11,3 +11,27 @@ A basic profanity filter.
             return;
         }
 ~~~
+
+## you can use a txt file if you don't like a hughe string in your code:
+~~~
+public TextAsset forbiddenWords;
+
+string forbiddenWordsString = @"\b(?:";
+        string[] seperators = { "\n", " " };
+        string[] words;
+
+        words = forbiddenWords.text.Split(seperators, StringSplitOptions.RemoveEmptyEntries);
+
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (i < words.Length - 1)
+            {
+                forbiddenWordsString += words[i] + "|";
+            } else {
+                forbiddenWordsString += words[i];
+            }
+
+        }
+        forbiddenWordsString += @")\b";
+        forbiddenWordsString = Regex.Replace(forbiddenWordsString, @"\t|\n|\r", "");
+~~~
