@@ -34,4 +34,6 @@ string forbiddenWordsString = @"\b(?:";
         }
         forbiddenWordsString += @")\b";
         forbiddenWordsString = Regex.Replace(forbiddenWordsString, @"\t|\n|\r", "");
+        
+        bool nameNotOke = Regex.IsMatch(textName.text.ToLower(), forbiddenWordsString.ToLower());
 ~~~
