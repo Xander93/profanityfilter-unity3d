@@ -37,3 +37,9 @@ string forbiddenWordsString = @"\b(?:";
         
         bool nameNotOke = Regex.IsMatch(textName.text.ToLower(), forbiddenWordsString.ToLower());
 ~~~
+
+Dont forget to mention me in your credits <3
+
+Cheers,
+
+Xander
